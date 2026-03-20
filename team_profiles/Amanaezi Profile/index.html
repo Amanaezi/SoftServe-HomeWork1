@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artem Rublovskyi | .NET Developer</title>
+    <style>
+        :root {
+            --primary: #2b6cb0;
+            --accent: #6b46c1;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 30px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 40px;
+        }
+
+        .avatar {
+            width: 100%;
+            border-radius: 15px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #edf2f7;
+        }
+
+        .name { font-size: 24px; font-weight: 800; margin: 0; }
+        .tag { color: var(--text-muted); font-size: 16px; margin-bottom: 25px; }
+
+        .contact-box {
+            border-top: 1px solid #edf2f7;
+            padding-top: 20px;
+        }
+
+        .btn-email {
+            display: block;
+            background: var(--accent);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .btn-email:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* Main */
+        .main-content { display: flex; flex-direction: column; gap: 25px; }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        h3 { 
+            margin-top: 0; 
+            font-size: 18px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            border-bottom: 2px solid #f7fafc;
+            padding-bottom: 10px;
+        }
+
+        .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #edf2f7;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin: 0 5px 8px 0;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .project-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .trait {
+            font-size: 14px;
+            background: #fffaf0;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #feebc8;
+        }
+
+        @media (max-width: 850px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <img src="photo.jpg" alt="Artem Rublovskyi" class="avatar">
+        <h1 class="name">Artem Rublovskyi</h1>
+        <p class="tag">NURE Student | .NET Backend</p>
+        
+        <div class="contact-box">
+            <span class="label">Email</span>
+            <a href="mailto:artem.rublovskyi@nure.ua" class="btn-email">Contact Me</a>
+            <p style="font-size: 12px; text-align: center; color: var(--text-muted); margin-top: 10px;">
+                artem.rublovskyi@nure.ua
+            </p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="card">
+            <h3>Academic Background</h3>
+            <div class="highlight-box">
+                <strong>Student & 2025 Medalist</strong><br>
+                <small>Kharkiv National University of Radio Electronics (NURE)</small>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Hard Skills</h3>
+            <span class="label">Core Stack</span>
+            <span class="badge">C# Advanced</span>
+            <span class="badge">ASP.NET MVC</span>
+            <span class="badge">Razor Pages</span>
+            <span class="badge">MSSQL Basics</span>
+            
+            <div style="margin-top: 15px;">
+                <span class="label">Secondary</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">C++</span>
+                <span class="badge">HTML/CSS (Functional)</span>
+                <span class="badge">Advanced MS Office</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Experience</h3>
+            <div style="margin-bottom: 25px;">
+                <span class="label">IT Practice - SoftServe</span>
+                <strong>Cinema Management System (.NET)</strong>
+                <p style="font-size: 14px; color: var(--text-muted);">
+                    Developed the backend architecture and integrated server-side logic for a movie theater web app.
+                </p>
+                <a href="https://github.com/cinema-system-lab/Cinema-MVC-App" class="project-link" target="_blank">View GitHub Repo →</a>
+            </div>
+
+            <div>
+                <span class="label">Non-IT Background (3.5 Years)</span>
+                <strong>Administrative Lead (Driving School)</strong>
+                <p style="font-size: 14px; color: var(--text-muted);">
+                    Processing documentation, weekly reporting, and high-precision data management. Responsible for full cycle of document preparation for registration.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Soft Skills & Lifestyle</h3>
+            <div class="traits-grid">
+                <div class="trait">
+                    <b>Extreme Responsibility</b><br>
+                    <small>High attention to details and deadlines due to a meticulous mindset.</small>
+                </div>
+                <div class="trait">
+                    <b>Resilience</b><br>
+                    <small>Years of team sports taught me discipline and the ability to stay focused under pressure.</small>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <span class="label">Outside of coding</span>
+                <span class="badge">🎮 CS2 (Semi-Pro)</span>
+                <span class="badge">⚽ Football (6+ years)</span>
+                <span class="badge">🏋️ Gym (2 years)</span>
+                <span class="badge">📍 Kharkiv, UA</span>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
