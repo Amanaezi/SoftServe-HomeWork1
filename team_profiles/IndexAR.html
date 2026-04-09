@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SoftServe HomeWork – Головна</title>
+    <link rel="stylesheet" href="../navbar.css">
+    <style>
+        body { margin: 0; font-family: sans-serif; background: #050505; color: #fff; display: flex; flex-direction: column; min-height: 100vh; }
+        .home-content { max-width: 1100px; margin: 60px auto; padding: 0 24px; width: 100%; box-sizing: border-box; }
+        .home-content h1 { font-size: 2rem; margin-bottom: 12px; }
+        .home-content > p { color: #71717a; margin-bottom: 32px; }
+        .profiles-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+        .profile-card { background: #111111; border: 1px solid #1f1f1f; border-radius: 16px; padding: 24px; text-decoration: none; color: #fff; transition: border-color 0.2s; min-width: 200px; }
+        .profile-card:hover { border-color: #333; }
+        .profile-card h2 { font-size: 1rem; margin: 0 0 4px; }
+        .profile-card span { font-size: 0.8rem; color: #71717a; }
+    </style>
 </head>
 <body>
-    
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="IndexAR.html" class="nav-logo">SoftServe HomeWork</a>
+            <ul class="nav-links">
+                <li><a href="IndexAR.html" class="active">Головна</a></li>
+                <li><a href="../TeamMember2profile.html">Artem Tarnopolskyi</a></li>
+                <li><a href="IKiritoII Profile/index.html">Yehor Iskorostenskyi</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="home-content">
+        <h1>Профілі команди</h1>
+        <p>Оберіть профіль учасника команди:</p>
+        <div class="profiles-grid">
+            <a href="../TeamMember2profile.html" class="profile-card">
+                <h2>Artem Tarnopolskyi</h2>
+                <span>Team Member</span>
+            </a>
+            <a href="IKiritoII Profile/index.html" class="profile-card">
+                <h2>Yehor Iskorostenskyi</h2>
+                <span>Team Member</span>
+            </a>
+        </div>
+    </main>
 </body>
 </html>
