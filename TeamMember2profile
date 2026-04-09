@@ -1,14 +1,117 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <title>Artem Tarnopolskyi Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artem Tarnopolskyi — Профіль</title>
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        .profile-container {
+            max-width: 640px;
+            margin: 48px auto;
+            padding: 0 24px;
+        }
+
+        .profile-card {
+            background: var(--theme-card);
+            border: 1px solid var(--theme-border);
+            border-radius: 20px;
+            padding: 36px;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .profile-card h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: var(--theme-text);
+        }
+
+        .profile-card .role {
+            font-size: 0.9rem;
+            color: var(--theme-accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .profile-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--theme-border);
+        }
+
+        .profile-field:last-child {
+            border-bottom: none;
+        }
+
+        .profile-field .label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--theme-text-dim);
+            font-weight: 600;
+        }
+
+        .profile-field .value {
+            font-size: 0.95rem;
+            color: var(--theme-text);
+        }
+
+        .profile-field .value a {
+            color: var(--theme-link);
+            text-decoration: none;
+        }
+
+        .profile-field .value a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Artem Tarnopolskyi</h1>
-    <p><strong>Роль:</strong> Team Member</p>
-    <p><strong>Опис:</strong> Студент комп’ютерної інженерії, цікавлюсь hardware частиною комп’ютера.</p>
-    <p><strong>Контакти:</strong> <a href="mailto:artem.tarnopolskyi@nure.ua">artem.tarnopolskyi@nure.ua</a></p>
+
+    <nav class="site-navbar">
+        <a class="nav-brand" href="team_profiles/IndexAR.html">SoftServe Team</a>
+        <ul class="nav-links">
+            <li><a href="team_profiles/IndexAR.html">Головна</a></li>
+            <li><a href="TeamMember2profile" class="active">Artem</a></li>
+            <li><a href="team_profiles/IKiritoII Profile/index.html">Yehor</a></li>
+        </ul>
+        <div class="nav-right">
+            <button id="theme-toggle" aria-label="Перемкнути тему">🌙 Темна</button>
+        </div>
+    </nav>
+
+    <main class="profile-container">
+        <div class="profile-card">
+            <h1>Artem Tarnopolskyi</h1>
+            <p class="role">Team Member</p>
+
+            <div class="profile-field">
+                <span class="label">Опис</span>
+                <span class="value">Студент комп'ютерної інженерії, цікавлюсь hardware частиною комп'ютера.</span>
+            </div>
+
+            <div class="profile-field">
+                <span class="label">Контакти</span>
+                <span class="value">
+                    <a href="mailto:artem.tarnopolskyi@nure.ua">artem.tarnopolskyi@nure.ua</a>
+                </span>
+            </div>
+        </div>
+    </main>
+
 </body>
 </html>
- 

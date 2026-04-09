@@ -1,23 +1,20 @@
+/* Map page-specific shorthand vars to global theme vars */
 :root {
-    --bg: #050505;
-    --card: #111111;
-    --border: #1f1f1f;
-    --text: #ffffff;
-    --text-dim: #71717a;
-    --accent: #00ff88;
+    --bg:       var(--theme-bg);
+    --card:     var(--theme-card);
+    --border:   var(--theme-border);
+    --text:     var(--theme-text);
+    --text-dim: var(--theme-text-dim);
+    --accent:   var(--theme-accent);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--bg);
-    color: var(--text);
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
-    padding: 20px;
 }
 
 .bento-wrapper {
@@ -27,6 +24,8 @@ body {
     gap: 16px;
     max-width: 1100px;
     width: 100%;
+    margin: 24px auto;
+    padding: 0 20px 40px;
 }
 
 .card {
@@ -36,10 +35,10 @@ body {
     padding: 24px;
     display: flex;
     flex-direction: column;
-    transition: border-color 0.3s ease;
+    transition: background 0.3s, border-color 0.3s;
 }
 
-.card:hover { border-color: #333; }
+.card:hover { border-color: var(--text-dim); }
 
 .header-with-icon {
     display: flex;
@@ -63,7 +62,7 @@ body {
 .bio { color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; }
 
 /* RPG Stats */
-.rpg-stats { grid-column: span 1; grid-row: span 2; background: linear-gradient(145deg, #111 0%, #161616 100%); }
+.rpg-stats { grid-column: span 1; grid-row: span 2; background: var(--theme-card-secondary); }
 .stat-row {
     display: flex;
     justify-content: space-between;
@@ -78,7 +77,7 @@ body {
 .uni-name { font-weight: 700; font-size: 1.1rem; }
 .uni-spec { color: var(--text-dim); font-size: 0.9rem; margin-top: 4px; }
 .uni-footer { margin-top: 15px; display: flex; justify-content: space-between; align-items: center; }
-.uni-year { font-size: 0.75rem; background: #1a1a1a; padding: 4px 10px; border-radius: 8px; }
+.uni-year { font-size: 0.75rem; background: var(--theme-card-tertiary); padding: 4px 10px; border-radius: 8px; }
 .uni-date { font-size: 0.75rem; color: var(--text-dim); }
 
 /* Skills */
@@ -87,12 +86,12 @@ body {
 .skill-name { font-weight: 600; font-size: 0.95rem; }
 .skill-status { font-size: 0.75rem; color: var(--text-dim); }
 .skill-status.active { color: var(--accent); }
-.skill-bar { height: 4px; background: #1a1a1a; border-radius: 2px; overflow: hidden; }
-.fill { height: 100%; background: var(--text); }
+.skill-bar { height: 4px; background: var(--theme-card-tertiary); border-radius: 2px; overflow: hidden; }
+.fill { height: 100%; background: var(--text); border-radius: 2px; }
 
 /* Music Section */
 .bands-list { display: flex; flex-direction: column; gap: 6px; }
-.band { background: #161616; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); }
+.band { background: var(--theme-card-secondary); padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); }
 .band span { font-size: 0.8rem; font-weight: 500; }
 
 /* Current Read */
@@ -102,7 +101,7 @@ body {
 
 /* Interests */
 .interest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; flex-grow: 1; }
-.hobby-item { background: #161616; border-radius: 16px; padding: 10px; text-align: center; border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.hobby-item { background: var(--theme-card-secondary); border-radius: 16px; padding: 10px; text-align: center; border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .hobby-item i { width: 18px; margin-bottom: 4px; color: var(--text); }
 .hobby-item p { font-size: 0.65rem; color: var(--text-dim); }
 

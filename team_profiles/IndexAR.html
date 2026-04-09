@@ -1,11 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SoftServe Team — Головна</title>
+    <script src="../theme.js"></script>
+    <link rel="stylesheet" href="../theme.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 48px auto;
+            padding: 0 24px;
+        }
+
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: var(--theme-text);
+            margin-bottom: 8px;
+        }
+
+        .page-subtitle {
+            font-size: 1rem;
+            color: var(--theme-text-dim);
+            margin-bottom: 40px;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .member-card {
+            background: var(--theme-card);
+            border: 1px solid var(--theme-border);
+            border-radius: 20px;
+            padding: 28px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: background 0.3s, border-color 0.2s, transform 0.2s;
+        }
+
+        .member-card:hover {
+            border-color: var(--theme-accent);
+            transform: translateY(-2px);
+        }
+
+        .member-card .member-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--theme-text);
+        }
+
+        .member-card .member-role {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--theme-accent);
+        }
+
+        .member-card .member-desc {
+            font-size: 0.9rem;
+            color: var(--theme-text-dim);
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+
+        .member-card .arrow {
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: var(--theme-text-dim);
+        }
+    </style>
 </head>
 <body>
-    
+
+    <nav class="site-navbar">
+        <a class="nav-brand" href="IndexAR.html">SoftServe Team</a>
+        <ul class="nav-links">
+            <li><a href="IndexAR.html" class="active">Головна</a></li>
+            <li><a href="../TeamMember2profile">Artem</a></li>
+            <li><a href="IKiritoII Profile/index.html">Yehor</a></li>
+        </ul>
+        <div class="nav-right">
+            <button id="theme-toggle" aria-label="Перемкнути тему">🌙 Темна</button>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <h1 class="page-title">SoftServe Team</h1>
+        <p class="page-subtitle">Команда студентів — профілі учасників</p>
+
+        <div class="members-grid">
+            <a class="member-card" href="../TeamMember2profile">
+                <span class="member-name">Artem Tarnopolskyi</span>
+                <span class="member-role">Team Member</span>
+                <span class="member-desc">Студент комп'ютерної інженерії, цікавиться hardware частиною комп'ютера.</span>
+                <span class="arrow">Переглянути профіль →</span>
+            </a>
+
+            <a class="member-card" href="IKiritoII Profile/index.html">
+                <span class="member-name">Yehor Iskorostenskiy</span>
+                <span class="member-role">Team Member</span>
+                <span class="member-desc">Студент програмної інженерії у НТУ «ХПІ». Вивчає C++ та Python.</span>
+                <span class="arrow">Переглянути профіль →</span>
+            </a>
+        </div>
+    </main>
+
 </body>
 </html>
