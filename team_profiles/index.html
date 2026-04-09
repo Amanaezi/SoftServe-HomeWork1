@@ -2,12 +2,180 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Artem Tarnopolskyi Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artem Tarnopolskyi — Профіль</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:       #f8f9fb;
+            --surface:  #ffffff;
+            --border:   #e4e7ec;
+            --accent:   #4f6ef7;
+            --text:     #111827;
+            --text-dim: #6b7280;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+        }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            height: 60px;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .navbar-links a {
+            display: block;
+            padding: 0.45rem 0.9rem;
+            border-radius: 8px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            color: var(--accent);
+            background: rgba(79,110,247,0.07);
+        }
+
+        /* Profile card */
+        .profile-wrapper {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .profile-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #eef1ff 0%, #e8ecff 100%);
+            padding: 2.5rem 2rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .profile-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .profile-header h1 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.3px; }
+        .profile-header .role { font-size: 0.85rem; color: var(--text-dim); margin-top: 3px; }
+
+        .profile-body { padding: 1.75rem 2rem; }
+
+        .profile-row {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .profile-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .profile-row strong {
+            min-width: 90px;
+            color: var(--text-dim);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .profile-row a { color: var(--accent); text-decoration: none; }
+        .profile-row a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-    <h1>Artem Tarnopolskyi</h1>
-    <p><strong>Роль:</strong> Team Member</p>
-    <p><strong>Опис:</strong> Студент комп’ютерної інженерії, цікавлюсь hardware частиною комп’ютера.</p>
-    <p><strong>Контакти:</strong> <a href="mailto:artem.tarnopolskyi@nure.ua">artem.tarnopolskyi@nure.ua</a></p>
+
+    <nav class="navbar" aria-label="Головна навігація">
+        <div class="navbar-inner">
+            <a href="../index.html" class="navbar-brand">SoftServe HomeWork1</a>
+            <ul class="navbar-links">
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="./index.html" class="active">Профілі</a></li>
+                <li><a href="mailto:artem.tarnopolskyi@nure.ua">Контакти</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="profile-wrapper">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar">AT</div>
+                <div>
+                    <h1>Artem Tarnopolskyi</h1>
+                    <p class="role">Team Member &middot; NURE</p>
+                </div>
+            </div>
+            <div class="profile-body">
+                <div class="profile-row">
+                    <strong>Роль</strong>
+                    <span>Team Member</span>
+                </div>
+                <div class="profile-row">
+                    <strong>Опис</strong>
+                    <span>Студент комп'ютерної інженерії, цікавлюсь hardware частиною комп'ютера.</span>
+                </div>
+                <div class="profile-row">
+                    <strong>Контакти</strong>
+                    <a href="mailto:artem.tarnopolskyi@nure.ua">artem.tarnopolskyi@nure.ua</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
 </body>
 </html>
