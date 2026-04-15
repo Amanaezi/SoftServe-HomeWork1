@@ -76,7 +76,7 @@ body.dark {
     height: 16px;
 }
 
-.hero {
+.bento-hero {
     grid-column: span 2;
     position: relative;
     overflow: hidden;
