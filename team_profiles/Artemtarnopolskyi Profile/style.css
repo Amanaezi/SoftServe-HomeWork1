@@ -1,0 +1,89 @@
+.profile-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1.2fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.hero-card {
+    padding: 28px;
+    display: grid;
+    align-content: start;
+    gap: 12px;
+}
+
+.hero-card h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    letter-spacing: -0.03em;
+}
+
+.hero-card p {
+    margin: 0;
+    color: var(--text-soft);
+    line-height: 1.65;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.btn-email {
+    display: inline-block;
+    width: fit-content;
+    color: #ffffff;
+    background: linear-gradient(145deg, var(--primary), #2f9cf1);
+    text-decoration: none;
+    border-radius: 11px;
+    padding: 10px 13px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.cards {
+    display: grid;
+    gap: 16px;
+}
+
+.profile-card {
+    padding: 22px;
+}
+
+.profile-card h2 {
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+}
+
+.profile-card p {
+    margin: 0;
+    color: var(--text-soft);
+    line-height: 1.6;
+}
+
+.profile-card a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 930px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-card,
+    .profile-card {
+        padding: 14px;
+    }
+
+    .theme-toggle {
+        width: 100%;
+    }
+}
