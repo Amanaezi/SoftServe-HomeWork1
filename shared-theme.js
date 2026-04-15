@@ -11,12 +11,15 @@
     }
 
     if (toggle) {
+        toggle.setAttribute("aria-pressed", String(body.classList.contains("dark")));
         toggle.addEventListener("click", () => {
             body.classList.toggle("dark");
+            const isDark = body.classList.contains("dark");
             localStorage.setItem(
                 storageKey,
-                body.classList.contains("dark") ? "dark" : "light"
+                isDark ? "dark" : "light"
             );
+            toggle.setAttribute("aria-pressed", String(isDark));
         });
     }
 
