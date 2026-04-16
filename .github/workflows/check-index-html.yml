@@ -31,13 +31,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: |
           BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}")
+          STATUS_LINE="- Branch **$BRANCH_NAME**: index.html file present: ✅"
           
           git fetch origin main
           git checkout main
           
-          echo "- Branch **$BRANCH_NAME**: index.html file present: ✅" >> README.md
+          if grep -Fq -- "- Branch **$BRANCH_NAME**:" README.md; then
+            sed -i "s|^- Branch \*\*$BRANCH_NAME\*\*:.*|$STATUS_LINE|" README.md
+          else
+            echo "$STATUS_LINE" >> README.md
+          fi
           
           git add README.md
-          git commit -m "Update README.md: add info about $BRANCH_NAME branch"
-          
-          git push origin main
+          if ! git diff --cached --quiet; then
+            git commit -m "Update README.md: add info about $BRANCH_NAME branch"
+            git push origin main
+          fi
