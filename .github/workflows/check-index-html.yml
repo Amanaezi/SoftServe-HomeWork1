@@ -1,0 +1,47 @@
+name: Check index.html and update main README!!!
+on:
+  workflow_dispatch:
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+
+      - name: Run index.html check script
+        id: check_index
+        run: |
+          chmod +x ./check_index.sh
+          ./check_index.sh
+
+      - name: Configure Git user
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update README.md in main branch
+        if: success()
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          STATUS_LINE="- Branch **$BRANCH_NAME**: index.html file present: ✅"
+          
+          git fetch origin main
+          git checkout -B main origin/main
+          
+          if grep -Fq -- "- Branch **$BRANCH_NAME**:" README.md; then
+            sed -i "s|^- Branch \*\*$BRANCH_NAME\*\*:.*|$STATUS_LINE|" README.md
+          else
+            echo "$STATUS_LINE" >> README.md
+          fi
+          
+          git add README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Update README.md: add info about $BRANCH_NAME branch"
+            git push origin main
+          fi
